@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Site</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar and Content -->
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col s12 m5 l4 blue-grey lighten-5" id="sidebar">
+                <h5 class="center-align">Table of Contents</h5>
+                <ul class="collection" id="toc"></ul>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col s12 m7 l8">
+                <header class="section">
+                    <h1 class="center-align teal-text text-darken-3">New Mobile Map Training</h1>
+                    <p class="center-align grey-text text-darken-1">Learn how to use the mobile map with these step-by-step animations.</p>
+                </header>
+
+                <h3>Toolbar Buttons</h3>
+
+                <section id="section-map-themes" class="section scrollspy" data-icon="assets/img/button_map_themes.png">
+                    <h4 class="teal-text text-darken-2">Map Display Themes</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Show_Map_Display_Themes.gif" alt="Show Map Display Themes" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>Map Display Themes quickly toggle different mapping styles.  The map you want to see when driving might be different than the map you want to see in an incident command mode.  The current map themes are:
+                                <ul>
+                                    <li><h5>Offline Maps</h5>
+                                        Offline maps are available regardless of your network connection.  The offline maps are downloaded to your device, and will generally display faster than online maps.
+                                    </li>
+                                    <blockquote>
+                                        <ul>
+                                            <li><b>Offline Map.</b> This is the default map display theme.  It shows all basic information in the City, and the hydrants, FDCs, and Knox boxes will turn on by default when zoomed in close enough. </li>
+                                            <li><b>Offline Preplan.</b> This map is generally the same as the <i>Offline Map</i>, but adds some additional preplan information from FirstDueSizeUp when zoomed in. </li>
+                                            <li><b>Offline Aerial.</b> This map is the same as the <i>Offline Map</i> when zoomed out, but will automatically display aerial photos when zoomed in a certain amount.  It will be much faster than the <i>Online Aerial</i> map, but will potentially be more out of date, and will not show outside of the City boundary. </li>
+                                        </ul>
+                                    </blockquote>
+                                    <li><h5>Online Maps</h5>
+                                        Online maps are available when you have an internet connection.  The online maps can be more up to date than offline maps, but may take longer to load. Online maps will show areas well beyond the borders of the City if you every need to respond outside of the National Capital Region.
+                                    </li>
+                                    <blockquote>
+                                        <ul>
+                                            <li><b>Online Map.</b> Basic street and building information provided by an outside vendor (ESRI). Will display for areas outside of the NCR, but will take longer to load, or will not work depending on your internet connectivity. <i>NOTE:  Our hydrants, FDCs, and Knox boxes will display when zoomed in.</i></li>
+                                            <li><b>Online Aerial.</b>  Aerial photography information provided by an outside vendor (ESRI).  Will display for areas outside of the NCR, but will take longer to load, or will not work depending on your internet connectivity. <i>NOTE:  Our hydrants, FDCs, and Knox boxes will display when zoomed in.</i></li>
+                                        </ul>
+                                    </blockquote>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-zoom-with-me" class="section scrollspy"  data-icon="assets/img/button_centerWithMe.png">
+                    <h4  class="teal-text text-darken-2">Zoom with My Unit</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Zoom_with_My_Unit.gif" alt="Zoom with My Unit" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>You can use the <i>Zoom with My Unit</i> button (<img class="inline-icon" src="assets/img/button_centerWithMe.png" \>) to instruct Mobile to show both your unit and the location.  When used from the toolbar, it will adjust the zoom to always show your unit along with the location designated in the lower right of the screen.  The button is red (<img class="inline-icon" src="assets/img/button_tracking_centerWithMe.png" \>) when this tracking mode is active.  Tap it again to toggle it off.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-map-tracking" class="section scrollspy"  data-icon="assets/img/button_tracking_normal.png">
+                    <h4  class="teal-text text-darken-2">Vehicle Tracking</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Map_Tracking_Modes.gif" alt="Vehicle Tracking" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+
+                            <p>Being in the wrong vehicle tracking mode can lead to a lot of frustration.  When attempting to view the incident location on the map, tracking modes might keep moving the map back to your vehicle, which may not be desired.</p>
+                            
+                            <p>By default, vehicle tracking is turned off, i.e. in <i>Normal</i> tracking mode (<img class="inline-icon" src="assets/img/button_tracking_normal.png" \>). You can pan around the map, and your current location will not affect the map zoom/center. </p>
+
+                            <p>Clicking once will toggle on <i>Center My Unit</i> tracking mode (<img class="inline-icon" src="assets/img/button_tracking_centerMe.png" \>). The map will follow your vehicle as it moves, but it will not zoom or rotate.</p>
+
+                            <p>Clicking again will toggle on <i>Navigation Mode</i> (<img class="inline-icon" src="assets/img/button_tracking_navigation.png" \>). The map will follow your vehicle as it moves, and it will rotate to always show the direction you are facing.  This is the default mode when you initiate driving directions.</p>
+
+                            <p> Clicking again will return the tracking to Normal mode (<img class="inline-icon" src="assets/img/button_tracking_normal.png" \>).</p>
+
+                            <p>The order of the buttons is:
+                                <ul>
+                                <img class="inline-icon-toc" src="assets/img/button_tracking_normal.png" \><i class="material-icons">arrow_forward</i>
+                                <img class="inline-icon-toc" src="assets/img/button_tracking_centerMe.png" \><i class="material-icons">arrow_forward</i>
+                                <img class="inline-icon-toc" src="assets/img/button_tracking_navigation.png" \><i class="material-icons">arrow_forward</i>
+                                <img class="inline-icon-toc" src="assets/img/button_tracking_normal.png" \>
+                                </ul>
+                            </p>
+                                
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-zoom-buttons" class="section scrollspy"  data-icon="assets/img/button_plus_minus.png">
+                    <h4  class="teal-text text-darken-2">Zoom Buttons</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/farley.gif" alt="Zoom Buttons" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+
+                            <p>The map can be zoomed in and out using the +/- buttons.  The map will zoom in/out by a set amount each time you click the button.  You can also use the pinch gesture to zoom in/out.</p>
+                            </p>
+                            <p>
+                            This description was written by AI.  If you actually don't know how to use the zoom buttons, please work with your battalion chief... 
+                            </p>
+                                
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-zoom-levels" class="section scrollspy"  data-icon="assets/img/button_zoom_levels.png">
+                    <h4  class="teal-text text-darken-2">Zoom Levels</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Show_Zoom_Levels.gif" alt="Zoom Levels" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>The <i>Zoom Levels</i> button (<img class="inline-icon" src="assets/img/button_zoom_levels.png" \>) allows you to jump to predefined levels without changing the center of your map.  They are general guidelines. </p>
+                            <p>Given that multi-touch "pinch-to-zoom" is available in this map, the use of zoom levels may be less advantageous.</p>    
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-spatial-bookmarks" class="section scrollspy"  data-icon="assets/img/button_spatial_bookmarks.png">
+                    <h4  class="teal-text text-darken-2">Spatial Bookmarks</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Show_Spatial_Bookmarks.gif" alt="Spatial Bookmarks" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>The <i>Spatial Bookmarks</i> button (<img class="inline-icon" src="assets/img/button_spatial_bookmarks.png" \>) allows you to jump to specified views (zoom and center) of the map.  Right now, there's only a bookmark for a general city overview, which may be handy if you ever find you need to "reset" the view of the map.</p>    
+                            <p>If you have ideas for other spatial bookmarks that you believe will benefit everyone, reach out to Fire IT.</p> 
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-info-button" class="section scrollspy"  data-icon="assets/img/button_info.png">
+                    <h4  class="teal-text text-darken-2">Info Button</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Show_Information_Panel.gif" alt="Info Button" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>The <i>Info</i> button (<img class="inline-icon" src="assets/img/button_info.png" \>) will show you map information for the point that you click on the map.  When activated, the button will highlight in red (<img class="inline-icon" src="assets/img/button_info_selected.png" \>). Any map touches when it's active will open the information panel.</p>
+                            <p>The information panel can show details about map layers, unit rosters, and call notes.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-assigned-units" class="section scrollspy"  data-icon="assets/img/button_rollup.png">
+                    <h4  class="teal-text text-darken-2">Assigned Units Display</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Toggle_Assigned_Unit_Display.gif" alt="Assigned Units Display" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>The map can be configured to show which units are associated with the incident.  When zoomed out, this may contribute to "visual clutter," and can be toggled off by using the <i>Roll-Up/-Down</i> button (<img class="inline-icon" src="assets/img/button_rollup.png" \>).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-map-orientation" class="section scrollspy"  data-icon="assets/img/button_north_orientation.png">
+                    <h4  class="teal-text text-darken-2">Map Orientation</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/North_Orientation.gif" alt="Map Orientation" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>While the map will normally be in "North-Up" orientation, certain map tracking modes may result in the map being oriented in another direction. The <i>"North-Up"</i> button will revert the orientation to the default.</p>
+                            <blockquote>
+                                <p>Note:  The map can be "twisted" manually if you use two fingers to rotate it.</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                </section>
+
+                <h3>Map Themes</h3>
+                
+                <section id="section-aerial-photos" class="section scrollspy">
+                    <h4  class="teal-text text-darken-2">Toggle Aerial Photos</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Toggle_Aerial_Photos.gif" alt="Toggle Aerial Photos" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>Aerial photography can be toggled on by using a Map Display Theme. When this map theme is enabled, the aerial photos are configured to turn on/off based on your zoom level.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-preplan-map" class="section scrollspy">
+                    <h4  class="teal-text text-darken-2">Toggle Preplan Map</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Toggle_Preplan_Map.gif" alt="Toggle Preplan Map" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>The default <i>Offline Map</i> only shows hydrants, FDCs, and Knox boxes.  Switching to the <i>Offline Preplan</i> map will turn on additional preplan features when zoomed in.  Right now, these include stairwells, elevators, FACPs, and shutoffs.  Contact Fire IT if there is interest in expanding this set of icons.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <h3>Working with Addresses</h3>
+
+                <section id="section-address-search" class="section scrollspy">
+                    <h4  class="teal-text text-darken-2">Search Address</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Search_Address.gif" alt="Search Address" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>The "Search the Map" box can be used to quickly find an address.  Right now, the results will only show street addresses, but in the future we plan to add common place names for easy search and reference.  Selecting a result will center the map over the location - a details pane will fly-out from the left and give options to get driving directions (<img class="inline-icon" src="assets/img/button_directions.png" \>), track your unit in relation to the address (<img class="inline-icon" src="assets/img/button_centerWithMe.png" \>), or recenter on the address (<img class="inline-icon" src="assets/img/button_centerAddress.png" \>).</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-address-directions" class="section scrollspy">
+                    <h4  class="teal-text text-darken-2">Address Directions</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Address_Directions_Overview.gif" alt="Address Directions" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>When viewing an address, you can select the navigate button (<img class="inline-icon" src="assets/img/button_directions.png" \>) to get driving directions. There are a few things to note:</p>
+                            <ol>
+                                <li>The map tracking mode will change to <i>Navigation Mode</i> (<img class="inline-icon" src="assets/img/button_tracking_navigation.png" \>).  Clicking this again will switch the map back to <i>Normal Mode</i>(<img class="inline-icon" src="assets/img/button_tracking_normal.png" \>)</li>
+                                <li>You can hide and expand the navigation pane without ending the navigation.</li>
+                                <li>You can click on the steps in the navigation pane to jump to that instruction on the map.</li>
+                                <li>The route is displayed on the map in a dashed blue line.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-address-unit-view" class="section scrollspy">
+                    <h4  class="teal-text text-darken-2">Zoom with Unit</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Address_Unit_View.gif" alt="Zoom with Unit" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>When viewing an address, you can select the <i>Zoom with Unit</i> button (<img class="inline-icon" src="assets/img/button_centerWithMe.png" \>) to show your unit in relation to the address. When in this mode, the map will keep auto-zooming to a level that shows your unit and the target address at the same time -- when you move closer, the map will zoom closer.  Click the <i>Zoom with Unit</i> button (<img class="inline-icon" src="assets/img/button_tracking_centerWithMe.png" \>) in the right-side toolbar to exit this mode of tracking.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-address-recenter" class="section scrollspy">
+                    <h4  class="teal-text text-darken-2">Recenter Address</h4>
+                    <div class="card hoverable">
+                        <div class="card-image">
+                            <img src="assets/gifs/Address_Recenter.gif" alt="Recenter Address" class="responsive-img">
+                        </div>
+                        <div class="card-content">
+                            <p>When viewing an address, you can select the <i>Recenter</i> button (<img class="inline-icon" src="assets/img/button_centerAddress.png" \>) to zoom and center the map on the selected address.</p>
+                        </div>
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- Floating Action Buttons -->
+    <div id="navigation-buttons" class="fixed-action-btn">
+        <a class="btn-floating btn-large teal darken-2">
+            <i class="material-icons">menu</i>
+        </a>
+        <ul>
+            <li>
+                <a id="go-to-top" class="btn-floating red">
+                    <i class="material-icons">arrow_upward</i>
+                </a>
+            </li>
+            <li>
+                <a id="go-up" class="btn-floating yellow darken-1">
+                    <i class="material-icons">arrow_back</i>
+                </a>
+            </li>
+            <li>
+                <a id="go-down" class="btn-floating green">
+                    <i class="material-icons">arrow_forward</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer blue-grey darken-1">
+        <div class="container">
+            <div class="center-align">
+                <p>&copy; 2025 Training Site</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
