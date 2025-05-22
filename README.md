@@ -44,10 +44,6 @@ To set up and run the training site locally, follow these steps:
 - Modify the styles in `assets/css/styles.css` to change the appearance of the site.
 - Update the JavaScript in `assets/js/script.js` to enhance functionality or add new features.
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
-
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
