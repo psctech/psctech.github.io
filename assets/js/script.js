@@ -74,6 +74,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+    // Helper function to get the current section
+    const getCurrentSection = () => {
+        let currentSection = null;
+        let smallestOffset = Infinity;
+
+        sectionsArray.forEach((section) => {
+            const rect = section.getBoundingClientRect();
+            const offset = Math.abs(rect.top);
+
+            // Find the section closest to the top of the viewport
+            if (offset < smallestOffset) {
+                smallestOffset = offset;
+                currentSection = section;
+            }
+        });
+
+        return currentSection;
+    };
+
     // Scroll to the top
     goToTop.addEventListener('click', () => {
         window.scrollTo({
@@ -84,12 +103,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Scroll to the previous section
     goUp.addEventListener('click', () => {
-        const currentSection = sectionsArray.find((section) => {
-            const rect = section.getBoundingClientRect();
-            return rect.top >= 0 && rect.top <= window.innerHeight / 2;
-        });
-
+        const currentSection = getCurrentSection();
         const currentIndex = sectionsArray.indexOf(currentSection);
+
         if (currentIndex > 0) {
             scrollToSection(sectionsArray[currentIndex - 1]);
         }
@@ -97,12 +113,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Scroll to the next section
     goDown.addEventListener('click', () => {
-        const currentSection = sectionsArray.find((section) => {
-            const rect = section.getBoundingClientRect();
-            return rect.top >= 0 && rect.top <= window.innerHeight / 2;
-        });
-
+        const currentSection = getCurrentSection();
         const currentIndex = sectionsArray.indexOf(currentSection);
+
         if (currentIndex < sectionsArray.length - 1) {
             scrollToSection(sectionsArray[currentIndex + 1]);
         }

@@ -166,22 +166,42 @@ footer {
 footer p {
     margin: 0;
 }
-
 /* Floating Action Buttons */
 #navigation-buttons {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 10px;
+    right: 50px;
     z-index: 1000; /* Ensure it appears above other elements */
 }
 
+#navigation-buttons ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#navigation-buttons ul li {
+    margin-bottom: 10px; /* Add spacing between buttons */
+}
+
 #navigation-buttons ul li a {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    visibility: visible;
+    opacity: 1 !important; /* Ensure buttons are fully opaque */
+    box-shadow: none !important; /* Remove shadow animations */
+    transform: none !important; /* Remove any scaling or transformations */
+    transition: none !important; /* Disable all animations */
+    animation: none !important; /* Disable any keyframe animations */
+}
+
+#navigation-buttons ul li a:active {
+    transform: none !important; /* Remove shrinking effect on click */
+    opacity: 1 !important; /* Ensure opacity remains 1 */
 }
 
 #navigation-buttons ul li a:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    transform: none !important; /* Remove hover scaling effect */
+    opacity: 1 !important; /* Ensure opacity remains 1 */
 }
 
 /* Responsive Design */
